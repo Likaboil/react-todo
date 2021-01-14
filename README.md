@@ -1,4 +1,25 @@
-# Getting Started with Create React App
+# Personal training project TO-DO Application
+
+### Description
+
+Simple Todo-list application for creating and editing tasks.
+
+###  Application use
+
+Create new tasks using the ADD button.
+
+Important tasks can be highlighted using the exclamation mark button.
+
+You can complete the task by clicking on the task text.
+
+Or select the button with the trash on the right of the task to delete.
+
+To find the task you want, start typing in the search box.
+
+Added counter of completed and unfinished tasks for especially lazy ones.
+
+
+### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +89,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Автор:
+[Лилия Сагитова](https://github.com/Likaboil)
+
+[Telegram](https://t.me/likaboil)
+
+<a href="mailto:guverboil@gmail.com">guverboil@gmail.com</a>
