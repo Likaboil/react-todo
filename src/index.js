@@ -5,16 +5,7 @@ import AppHeader from './components/app-header';
 import SearchPanel from './components/search-panel';
 import SearchBtn from './components/search-btn';
 import TaskList from './components/task-list';
-
-const AddTaskForm = () => {
-  return (
-    <form>
-      <input type="text"
-              placeholder="What needs to be done?" />
-      <button type="submit">Add</button>
-    </form>
-  );
-};
+import AddTaskForm from './components/add-task-form';
 
 const App = (
   <div>
