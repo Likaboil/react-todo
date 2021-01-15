@@ -3,16 +3,7 @@ import ReactDOM from 'react-dom';
 
 import AppHeader from './components/app-header';
 import SearchPanel from './components/search-panel';
-
-const SearchBtn = () => {
-  return (
-    <div>
-      <button type="button">All</button>
-      <button type="button">Active</button>
-      <button type="button">Done</button>
-    </div>
-  );
-};
+import SearchBtn from './components/search-btn';
 
 const TaskList = () => {
   return (
