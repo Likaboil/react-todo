@@ -3,7 +3,7 @@ import './app.css';
 
 import AppHeader from '../app-header';
 import SearchPanel from '../search-panel';
-import SearchBtn from '../search-btn';
+import Filters from '../filters';
 import TaskList from '../task-list';
 import AddTaskForm from '../add-task-form';
 
@@ -14,7 +14,7 @@ const App = () => {
       <AppHeader />
       <div className="search-panel d-flex">
         <SearchPanel />
-        <SearchBtn />
+        <Filters />
       </div>
       <TaskList />
       <AddTaskForm />

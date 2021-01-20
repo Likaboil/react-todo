@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchBtn = () => {
+const Filters = () => {
   return (
     <div>
       <button type="button">All</button>
@@ -10,4 +10,4 @@ const SearchBtn = () => {
   );
 };
 
-export default SearchBtn;
+export default Filters;
