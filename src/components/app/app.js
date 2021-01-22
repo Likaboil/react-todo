@@ -9,6 +9,13 @@ import AddTaskForm from '../add-task-form';
 
 
 const App = () => {
+
+  const todoListDefault = [
+    {label: "Learn React", important: true, key: 1 },
+    {label: "Cook dinner", important: false, key: 2 },
+    {label: "Build Awesome App", important: true, key: 3 },
+  ]
+
   return (
     <div className="todo-app">
       <AppHeader />
@@ -16,7 +23,7 @@ const App = () => {
         <SearchPanel />
         <Filters />
       </div>
-      <TodoList />
+      <TodoList todoListProps = {todoListDefault} />
       <AddTaskForm />
     </div>
   );

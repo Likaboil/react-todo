@@ -2,7 +2,7 @@ import React from 'react';
 import './todo-list.css';
 import TodoListItem from '../todo-list-item';
 
-const TodoList = () => {
+const TodoList = (props) => {
   return (
     <ul className="todo-list list-group">
       <li className="list-group-item">
