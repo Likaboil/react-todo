@@ -8,7 +8,7 @@ const TodoListItem = ({label, important = false}) => {
   };
 
   return <span className="todo-list-item-label"
-                style = {style}>{label}</span>
+                style={style}>{label}</span>
 };
 
 export default TodoListItem;
