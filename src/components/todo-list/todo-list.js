@@ -5,9 +5,12 @@ import TodoListItem from '../todo-list-item';
 const TodoList = ({todoListProps}) => {
 
   const items = todoListProps.map((item) => {
+
+    const {key, ...itemProps} = item;
+
     return (
-      <li className="list-group-item" key={item.key}>
-        <TodoListItem label={item.label} important={item.important} />
+      <li className="list-group-item" key={key}>
+        <TodoListItem {...itemProps} />
       </li>
     );
   });
