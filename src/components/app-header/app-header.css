@@ -1,0 +1,13 @@
+.app-header {
+  align-items: flex-end;
+}
+
+.app-header h1 {
+  flex-grow: 1;
+  color: #614B51;
+}
+
+.app-header h2 {
+  font-size: 1rem;
+  color: #af5220;
+}
