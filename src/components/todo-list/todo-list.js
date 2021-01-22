@@ -1,9 +1,9 @@
 import React from 'react';
-import './task-list.css';
+import './todo-list.css';
 
-const TaskList = () => {
+const TodoList = () => {
   return (
-    <ul className="task-list list-group">
+    <ul className="todo-list list-group">
       <li className="list-group-item">Learn React</li>
       <li className="list-group-item">Cook dinner</li>
       <li className="list-group-item">Build Awesome App</li>
@@ -11,4 +11,4 @@ const TaskList = () => {
   );
 };
 
-export default TaskList;
+export default TodoList;

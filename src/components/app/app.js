@@ -4,7 +4,7 @@ import './app.css';
 import AppHeader from '../app-header';
 import SearchPanel from '../search-panel';
 import Filters from '../filters';
-import TaskList from '../task-list';
+import TodoList from '../todo-list';
 import AddTaskForm from '../add-task-form';
 
 
@@ -16,7 +16,7 @@ const App = () => {
         <SearchPanel />
         <Filters />
       </div>
-      <TaskList />
+      <TodoList />
       <AddTaskForm />
     </div>
   );
