@@ -4,17 +4,17 @@ import TodoListItem from '../todo-list-item';
 
 const TodoList = ({todoListProps}) => {
 
+  const items = todoListProps.map((item) => {
+    return (
+      <li className="list-group-item" key={item.key}>
+        <TodoListItem label={item.label} important={item.important} />
+      </li>
+    );
+  });
+
   return (
     <ul className="todo-list list-group">
-      <li className="list-group-item">
-        <TodoListItem label={todoListProps[0].label} important={todoListProps[0].important} />
-      </li>
-      <li className="list-group-item">
-        <TodoListItem label={todoListProps[1].label} important={todoListProps[1].important} />
-      </li>
-      <li className="list-group-item">
-        <TodoListItem label={todoListProps[2].label} important={todoListProps[2].important} />
-      </li>
+      {items}
    </ul>
   );
 };
