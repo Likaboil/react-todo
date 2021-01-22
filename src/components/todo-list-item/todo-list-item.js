@@ -11,7 +11,19 @@ export default class TodoListItem extends Component {
       color: important? '#bc1c00': 'black'
     };
 
-    return <span className="todo-list-item-label"
-                  style={style}>{label}</span>;
+    return (
+      <span className="todo-list-item">
+        <span className="todo-list-item-label"
+                  style={style}>{label}</span>
+        <button className="btn btn-outline-danger btn-sm float-right"
+                type="button">
+          <i className="fa fa-trash" />
+        </button>
+        <button className="btn btn-outline-success btn-sm float-right"
+                type="button">
+          <i className="fa fa-exclamation" />
+        </button>
+      </span>
+    );
   }
 }
