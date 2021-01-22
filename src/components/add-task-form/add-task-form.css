@@ -1,0 +1,9 @@
+.add-panel {
+  margin-top: 1rem;
+}
+
+.add-panel .new-task-label {
+  width: auto;
+  flex-grow: 1;
+  margin-right: 5px;
+}
