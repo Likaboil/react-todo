@@ -2,17 +2,18 @@ import React from 'react';
 import './todo-list.css';
 import TodoListItem from '../todo-list-item';
 
-const TodoList = (props) => {
+const TodoList = ({todoListProps}) => {
+
   return (
     <ul className="todo-list list-group">
       <li className="list-group-item">
-        <TodoListItem label="Learn React" important />
+        <TodoListItem label={todoListProps[0].label} important={todoListProps[0].important} />
       </li>
       <li className="list-group-item">
-        <TodoListItem label="Cook dinner" />
+        <TodoListItem label={todoListProps[1].label} important={todoListProps[1].important} />
       </li>
       <li className="list-group-item">
-        <TodoListItem label="Build Awesome App" important />
+        <TodoListItem label={todoListProps[2].label} important={todoListProps[2].important} />
       </li>
    </ul>
   );
