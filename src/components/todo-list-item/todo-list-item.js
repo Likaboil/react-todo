@@ -1,8 +1,8 @@
 import React from 'react';
 import './todo-list-item.css';
 
-const TodoListItem = () => {
-  return <span className="todo-list-item-label">Learn React</span>
+const TodoListItem = (props) => {
+  return <span className="todo-list-item-label">{props.label}</span>
 };
 
 export default TodoListItem;
