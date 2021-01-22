@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './todo-list-item.css';
 
-const TodoListItem = ({label, important = false}) => {
 
-  const style = {
-    color: important? '#bc1c00': 'black'
-  };
+export default class TodoListItem extends Component {
 
-  return <span className="todo-list-item-label"
-                style={style}>{label}</span>
-};
+  render() {
+    const {label, important = false} = this.props;
 
-export default TodoListItem;
+    const style = {
+      color: important? '#bc1c00': 'black'
+    };
+
+    return <span className="todo-list-item-label"
+                  style={style}>{label}</span>;
+  }
+}
