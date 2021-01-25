@@ -46,7 +46,8 @@ export default class TodoListItem extends Component {
           {label}
         </span>
         <button className="btn btn-outline-danger btn-sm float-right"
-                type="button">
+                type="button"
+                onClick={this.props.OnDeleted}>
           <i className="fa fa-trash" />
         </button>
         <button className="btn btn-outline-success btn-sm float-right"

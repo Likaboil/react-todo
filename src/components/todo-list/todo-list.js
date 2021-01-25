@@ -10,7 +10,8 @@ const TodoList = ({todoListProps}) => {
 
     return (
       <li className="list-group-item" key={key}>
-        <TodoListItem {...itemProps} />
+        <TodoListItem {...itemProps}
+        OnDeleted={()=> console.log('deleted')} />
       </li>
     );
   });
