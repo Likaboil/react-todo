@@ -9,8 +9,10 @@ export default class TodoListItem extends Component {
   };
 
   OnLabelClick = () => {
-    console.log(`Done ${this.props.label}`);
-  }
+    this.setState({
+      done: true
+    });
+  };
 
   render() {
     const {label, important = false} = this.props;
