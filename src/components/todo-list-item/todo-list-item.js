@@ -27,14 +27,13 @@ export default class TodoListItem extends Component {
       classNames += ' done';
     }
 
-    const style = {
-      color: important? '#bc1c00': 'black'
-    };
+    if(important) {
+      classNames += ' important'
+    }
 
     return (
       <span className={classNames}>
         <span className="todo-list-item-label"
-              style={style}
               onClick={this.OnLabelClick}>
           {label}
         </span>
