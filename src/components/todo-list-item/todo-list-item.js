@@ -15,12 +15,14 @@ export default class TodoListItem extends Component {
   render() {
     const {label, important = false} = this.props;
 
+    let classNames = "todo-list-item";
+
     const style = {
       color: important? '#bc1c00': 'black'
     };
 
     return (
-      <span className="todo-list-item">
+      <span className={classNames}>
         <span className="todo-list-item-label"
               style={style}
               onClick={this.OnLabelClick}>
