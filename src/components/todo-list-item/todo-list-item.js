@@ -17,6 +17,14 @@ export default class TodoListItem extends Component {
     });
   };
 
+  OnMarkImportant = () => {
+    this.setState(({important}) => {
+      return {
+        important: !important
+      };
+    });
+  }
+
   render() {
     const {label} = this.props;
     const {done, important} = this.state;
@@ -42,7 +50,8 @@ export default class TodoListItem extends Component {
           <i className="fa fa-trash" />
         </button>
         <button className="btn btn-outline-success btn-sm float-right"
-                type="button">
+                type="button"
+                onClick={this.OnMarkImportant}>
           <i className="fa fa-exclamation" />
         </button>
       </span>
