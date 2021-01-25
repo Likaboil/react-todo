@@ -5,7 +5,8 @@ import './todo-list-item.css';
 export default class TodoListItem extends Component {
 
   state = {
-    done: false
+    done: false,
+    important: false
   };
 
   OnLabelClick = () => {
@@ -17,8 +18,8 @@ export default class TodoListItem extends Component {
   };
 
   render() {
-    const {label, important = false} = this.props;
-    const {done} = this.state;
+    const {label} = this.props;
+    const {done, important} = this.state;
 
     let classNames = "todo-list-item";
 
