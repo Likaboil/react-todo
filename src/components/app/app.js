@@ -48,6 +48,16 @@ export default class App extends Component {
         ...oldTask,
         done: !oldTask.done
       };
+
+      const updateTodoList = [
+        ...todoListDefault.slice(0, idx),
+        newTask,
+        ...todoListDefault.slice(idx + 1),
+      ];
+
+      return {
+        todoListDefault: updateTodoList
+      };
     })
   }
 
