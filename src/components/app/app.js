@@ -20,6 +20,15 @@ export default class App extends Component {
     ]
   }
 
+  createTodoListItem(label) {
+    return {
+      label,
+      important: false,
+      done: false,
+      key: this.newKey++
+    };
+  }
+
   onToggleImportant =(key) => {
     console.log(`Toggle Important ${key}`);
   }
