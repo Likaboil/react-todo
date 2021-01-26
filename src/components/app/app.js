@@ -33,6 +33,23 @@ export default class App extends Component {
     return arr.findIndex((item)=>item.key===key);
   }
 
+
+  toggleProperty =(arr, propertyName, key) => {
+    const idx = this.findIdx(arr,key);
+
+    const oldTask = arr[idx];
+    const newTask = {
+      ...oldTask,
+      [propertyName]: !oldTask[propertyName]
+    };
+
+    return [
+      ...arr.slice(0, idx),
+      newTask,
+      ...arr.slice(idx + 1),
+    ];
+  }
+
   onToggleImportant =(key) => {
     console.log(`Toggle Important ${key}`);
   }
