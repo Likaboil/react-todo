@@ -51,29 +51,20 @@ export default class App extends Component {
   }
 
   onToggleImportant =(key) => {
-    console.log(`Toggle Important ${key}`);
+    this.setState(({todoListDefault})=> {
+
+      return {
+        todoListDefault: this.toggleProperty(todoListDefault, `important`, key)
+      };
+    })
   }
 
   onToggleDone =(key) => {
 
     this.setState(({todoListDefault})=> {
 
-      const idx=this.findIdx(todoListDefault,key);
-
-      const oldTask = todoListDefault[idx];
-      const newTask = {
-        ...oldTask,
-        done: !oldTask.done
-      };
-
-      const updateTodoList = [
-        ...todoListDefault.slice(0, idx),
-        newTask,
-        ...todoListDefault.slice(idx + 1),
-      ];
-
       return {
-        todoListDefault: updateTodoList
+        todoListDefault: this.toggleProperty(todoListDefault, `done`, key)
       };
     })
   }
