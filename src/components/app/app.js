@@ -35,6 +35,14 @@ export default class App extends Component {
     })
   }
 
+  addTask =(text) => {
+    const newTask = {
+      label: text,
+      important: false,
+      key: this.newKey++
+    };
+  }
+
   render() {
     return (
       <div className="todo-app">
