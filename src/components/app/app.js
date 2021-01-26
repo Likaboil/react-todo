@@ -41,6 +41,17 @@ export default class App extends Component {
       important: false,
       key: this.newKey++
     };
+
+    this.setState(({todoListDefault})=> {
+
+      const newTodoList = [
+        ...todoListDefault, newTask
+      ];
+
+      return {
+        todoListDefault: newTodoList,
+      };
+    })
   }
 
   render() {
