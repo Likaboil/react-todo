@@ -100,6 +100,10 @@ export default class App extends Component {
   }
 
   render() {
+    const {todoListDefault} = this.state;
+    const doneCount = todoListDefault.filter((item)=> item.done).length;
+    const activeCount = todoListDefault.length - doneCount;
+
     return (
       <div className="todo-app">
         <AppHeader
