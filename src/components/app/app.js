@@ -18,8 +18,19 @@ export default class App extends Component {
     ]
   }
 
-  deleteItem =(key) => {
-    console.log(`deleted ${key}`)
+  deleteTask =(key) => {
+    this.setState(({todoListDefault})=> {
+      const idx=todoListDefault.findIndex((item)=>item.key===key);
+
+      const newTodoList = [
+        ...todoListDefault.slice(0,idx),
+        ...todoListDefault.slice(idx+1)
+      ];
+
+      return {
+        todoListDefault: newTodoList
+      }
+    })
   }
 
   render() {
@@ -31,7 +42,7 @@ export default class App extends Component {
           <Filters />
         </div>
         <TodoList todoListProps = {this.state.todoListDefault}
-          onDeleted={this.deleteItem} />
+          onDeleted={this.deleteTask} />
         <AddTaskForm />
       </div>
     );
