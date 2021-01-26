@@ -53,11 +53,7 @@ export default class App extends Component {
   }
 
   addTask =(text) => {
-    const newTask = {
-      label: text,
-      important: false,
-      key: this.newKey++
-    };
+    const newTask = this.createTodoListItem(text);
 
     this.setState(({todoListDefault})=> {
 
