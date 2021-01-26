@@ -38,7 +38,17 @@ export default class App extends Component {
   }
 
   onToggleDone =(key) => {
-    console.log(`Toggle Done ${key}`);
+
+    this.setState(({todoListDefault})=> {
+
+      const idx=this.findIdx(todoListDefault,key);
+
+      const oldTask = todoListDefault[idx];
+      const newTask = {
+        ...oldTask,
+        done: !oldTask.done
+      };
+    })
   }
 
   deleteTask =(key) => {
