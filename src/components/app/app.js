@@ -24,7 +24,8 @@ export default class App extends Component {
           <SearchPanel />
           <Filters />
         </div>
-        <TodoList todoListProps = {todoListDefault} />
+        <TodoList todoListProps = {todoListDefault}
+          onDeleted={(key)=> console.log(`deleted ${key}`)} />
         <AddTaskForm />
       </div>
     );
