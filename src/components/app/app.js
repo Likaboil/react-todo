@@ -31,7 +31,7 @@ export default class App extends Component {
 
       return {
         todoListDefault: newTodoList
-      }
+      };
     })
   }
 
@@ -65,8 +65,7 @@ export default class App extends Component {
         <TodoList todoListProps = {this.state.todoListDefault}
           onDeleted={this.deleteTask} />
         <AddTaskForm
-          onTaskAdded={this.addTask}
-        />
+          onTaskAdded={this.addTask} />
       </div>
     );
   }
