@@ -3,6 +3,10 @@ import './add-task-form.css';
 
 export default class AddTaskForm extends Component {
 
+  state = {
+    label: ``
+  }
+
   onLabelChange=()=> {
     console.log('Change input value');
   }
