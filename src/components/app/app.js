@@ -18,6 +18,10 @@ export default class App extends Component {
     ]
   }
 
+  deleteItem =(key) => {
+    console.log(`deleted ${key}`)
+  }
+
   render() {
     return (
       <div className="todo-app">
@@ -27,7 +31,7 @@ export default class App extends Component {
           <Filters />
         </div>
         <TodoList todoListProps = {this.state.todoListDefault}
-          onDeleted={(key)=> console.log(`deleted ${key}`)} />
+          onDeleted={this.deleteItem} />
         <AddTaskForm />
       </div>
     );
