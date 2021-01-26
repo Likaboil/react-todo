@@ -10,13 +10,15 @@ import AddTaskForm from '../add-task-form';
 
 export default class App extends Component {
 
-  render() {
-    const todoListDefault = [
+  state = {
+    todoListDefault: [
       {label: "Learn React", important: true, key: 1 },
       {label: "Cook dinner", important: false, key: 2 },
       {label: "Build Awesome App", important: true, key: 3 },
     ]
+  }
 
+  render() {
     return (
       <div className="todo-app">
         <AppHeader />
@@ -24,7 +26,7 @@ export default class App extends Component {
           <SearchPanel />
           <Filters />
         </div>
-        <TodoList todoListProps = {todoListDefault}
+        <TodoList todoListProps = {this.state.todoListDefault}
           onDeleted={(key)=> console.log(`deleted ${key}`)} />
         <AddTaskForm />
       </div>
