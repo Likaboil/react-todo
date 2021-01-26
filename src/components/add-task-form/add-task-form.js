@@ -7,8 +7,10 @@ export default class AddTaskForm extends Component {
     label: ``
   }
 
-  onLabelChange=()=> {
-    console.log('Change input value');
+  onLabelChange=(evt)=> {
+    this.setState({
+      label: evt.target.value
+    });
   }
 
   render() {
