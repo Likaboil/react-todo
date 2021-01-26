@@ -29,6 +29,10 @@ export default class App extends Component {
     };
   }
 
+  findIdx(arr, key) {
+    return arr.findIndex((item)=>item.key===key);
+  }
+
   onToggleImportant =(key) => {
     console.log(`Toggle Important ${key}`);
   }
@@ -39,7 +43,7 @@ export default class App extends Component {
 
   deleteTask =(key) => {
     this.setState(({todoListDefault})=> {
-      const idx=todoListDefault.findIndex((item)=>item.key===key);
+      const idx=this.findIdx(todoListDefault,key);
 
       const newTodoList = [
         ...todoListDefault.slice(0,idx),
