@@ -20,6 +20,14 @@ export default class App extends Component {
     ]
   }
 
+  onToggleImportant =(key) => {
+    console.log(`Toggle Important ${key}`);
+  }
+
+  onToggleDone =(key) => {
+    console.log(`Toggle Done ${key}`);
+  }
+
   deleteTask =(key) => {
     this.setState(({todoListDefault})=> {
       const idx=todoListDefault.findIndex((item)=>item.key===key);
@@ -63,7 +71,9 @@ export default class App extends Component {
           <Filters />
         </div>
         <TodoList todoListProps = {this.state.todoListDefault}
-          onDeleted={this.deleteTask} />
+          onDeleted={this.deleteTask}
+          onToggleImportant={this.onToggleImportant}
+          onToggleDone={this.onToggleDone} />
         <AddTaskForm
           onTaskAdded={this.addTask} />
       </div>
