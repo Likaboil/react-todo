@@ -14,9 +14,9 @@ export default class App extends Component {
 
   state = {
     todoListDefault: [
-      {label: "Learn React", important: true, key: 1 },
-      {label: "Cook dinner", important: false, key: 2 },
-      {label: "Build Awesome App", important: true, key: 3 },
+      this.createTodoListItem(`Learn React`),
+      this.createTodoListItem(`Cook dinner`),
+      this.createTodoListItem(`Build Awesome App`),
     ]
   }
 
