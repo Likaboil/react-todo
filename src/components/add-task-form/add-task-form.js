@@ -9,7 +9,9 @@ export default class AddTaskForm extends Component {
                 type="text"
                 placeholder="What needs to be done?" />
         <button className="btn btn-outline-success"
-                type="submit">Add</button>
+                type="submit"
+                onClick={()=> this.props.onTaskAdded(`task for adding to list`)}>
+                Add</button>
       </form>
     );
   }

@@ -43,7 +43,9 @@ export default class App extends Component {
         </div>
         <TodoList todoListProps = {this.state.todoListDefault}
           onDeleted={this.deleteTask} />
-        <AddTaskForm />
+        <AddTaskForm
+          onTaskAdded={this.addTask}
+        />
       </div>
     );
   }
