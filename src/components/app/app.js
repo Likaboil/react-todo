@@ -10,6 +10,8 @@ import AddTaskForm from '../add-task-form';
 
 export default class App extends Component {
 
+  newKey=100;
+
   state = {
     todoListDefault: [
       {label: "Learn React", important: true, key: 1 },
