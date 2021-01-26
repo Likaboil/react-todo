@@ -107,8 +107,8 @@ export default class App extends Component {
     return (
       <div className="todo-app">
         <AppHeader
-          active={3}
-          done={0}
+          active={activeCount}
+          done={doneCount}
         />
         <div className="search-panel d-flex">
           <SearchPanel />
