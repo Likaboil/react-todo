@@ -100,8 +100,13 @@ export default class App extends Component {
     })
   }
 
+  searchTask =(items, searchLabel ) => {
+    return items.filter((item) => item.label.indexOf(searchLabel)) > -1;
+  }
+
   render() {
     const {todoListDefault} = this.state;
+
     const doneCount = todoListDefault.filter((item)=> item.done).length;
     const activeCount = todoListDefault.length - doneCount;
 
