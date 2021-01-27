@@ -143,7 +143,7 @@ export default class App extends Component {
         <div className="search-panel d-flex">
           <SearchPanel
             onSearchChange={this.onSearchChange} />
-          <Filters />
+          <Filters filter={filter} />
         </div>
         <TodoList todoListProps = {visibleTodoList}
           onDeleted={this.deleteTask}
