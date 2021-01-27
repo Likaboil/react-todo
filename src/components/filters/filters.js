@@ -11,7 +11,11 @@ export default class Filters extends Component {
 
   render() {
 
+    const {filter}=this.props;
+
     const buttons = this.buttons.map(({name, label}) => {
+      const isActive = filter === name;
+
       return <button className="btn btn-outline-primary" type="button" key={name}>{label}</button>
     });
 
