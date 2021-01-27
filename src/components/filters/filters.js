@@ -3,6 +3,12 @@ import './filters.css';
 
 export default class Filters extends Component {
 
+  buttons = [
+    {name: `all`, label: `All`},
+    {name: `active`, label: `Active`},
+    {name: `done`, label: `Done`}
+  ]
+
   render() {
     return (
       <div>
