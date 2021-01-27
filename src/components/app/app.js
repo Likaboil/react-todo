@@ -127,12 +127,12 @@ export default class App extends Component {
   }
 
   render() {
-    const {todoListDefault, searchLabel} = this.state;
+    const {todoListDefault, searchLabel, filter} = this.state;
 
     const doneCount = todoListDefault.filter((item)=> item.done).length;
     const activeCount = todoListDefault.length - doneCount;
 
-    const visibleTodoList = this.searchTask(todoListDefault, searchLabel);
+    const visibleTodoList = this.searchTask(this.filterTask(todoListDefault, filter), searchLabel);
 
     return (
       <div className="todo-app">
