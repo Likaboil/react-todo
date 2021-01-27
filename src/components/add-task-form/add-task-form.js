@@ -16,6 +16,9 @@ export default class AddTaskForm extends Component {
   onSubmit=(evt)=> {
     evt.preventDefault();
     this.props.onTaskAdded(this.state.label);
+    this.setState({
+        label: ``
+    });
   }
 
   render() {
