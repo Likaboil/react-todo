@@ -17,7 +17,8 @@ export default class App extends Component {
       this.createTodoListItem(`Learn React`),
       this.createTodoListItem(`Cook dinner`),
       this.createTodoListItem(`Build Awesome App`),
-    ]
+    ],
+    searchLabel: ``
   }
 
   createTodoListItem(label) {
