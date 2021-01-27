@@ -101,6 +101,11 @@ export default class App extends Component {
   }
 
   searchTask =(items, searchLabel ) => {
+
+    if (searchLabel.length === 0) {
+      return items;
+    }
+
     return items.filter((item) => item.label.indexOf(searchLabel)) > -1;
   }
 
