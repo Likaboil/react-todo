@@ -113,6 +113,19 @@ export default class App extends Component {
                                             .indexOf(searchLabel.toLowerCase()) > -1);
   }
 
+  filterTask =(items, filter) => {
+    switch(filter){
+      case `all`:
+        return items;
+      case `active`:
+        return items.filter((item)=> !item.done);
+      case `done`:
+        return items.filter((item)=> item.done);
+      default:
+       return items;
+    }
+  }
+
   render() {
     const {todoListDefault, searchLabel} = this.state;
 
