@@ -10,6 +10,11 @@ export default class Filters extends Component {
   ]
 
   render() {
+
+    const buttons = this.buttons.map(({name, label}) => {
+      return <button className="btn btn-outline-primary" type="button" key={name}>{label}</button>
+    });
+
     return (
       <div>
         <button className="btn btn-outline-primary" type="button">All</button>
