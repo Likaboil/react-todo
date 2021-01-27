@@ -10,6 +10,8 @@ export default class SearchPanel extends Component {
   render() {
     return <input className="form-control search-input"
                   placeholder="search"
-                  type="text" />;
+                  type="text"
+                  value={this.state.label}
+                  />;
   }
 };
