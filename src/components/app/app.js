@@ -110,10 +110,12 @@ export default class App extends Component {
   }
 
   render() {
-    const {todoListDefault} = this.state;
+    const {todoListDefault, searchLabel} = this.state;
 
     const doneCount = todoListDefault.filter((item)=> item.done).length;
     const activeCount = todoListDefault.length - doneCount;
+
+    const visibleTodoList = this.searchTask(todoListDefault, searchLabel);
 
     return (
       <div className="todo-app">
@@ -125,7 +127,7 @@ export default class App extends Component {
           <SearchPanel />
           <Filters />
         </div>
-        <TodoList todoListProps = {this.state.todoListDefault}
+        <TodoList todoListProps = {visibleTodoList}
           onDeleted={this.deleteTask}
           onToggleImportant={this.onToggleImportant}
           onToggleDone={this.onToggleDone} />
