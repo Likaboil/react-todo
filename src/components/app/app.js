@@ -73,6 +73,8 @@ export default class App extends Component {
 
   onSearchChange =(searchLabel) =>  this.setState({searchLabel});
 
+  onFilterChange =(filter) => this.setState({filter});
+
   deleteTask =(key) => {
     this.setState(({todoListDefault})=> {
       const idx=this.findIdx(todoListDefault,key);
@@ -143,7 +145,8 @@ export default class App extends Component {
         <div className="search-panel d-flex">
           <SearchPanel
             onSearchChange={this.onSearchChange} />
-          <Filters filter={filter} />
+          <Filters filter={filter}
+            onFilterChange={this.onFilterChange} />
         </div>
         <TodoList todoListProps = {visibleTodoList}
           onDeleted={this.deleteTask}
