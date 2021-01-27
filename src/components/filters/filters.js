@@ -11,14 +11,20 @@ export default class Filters extends Component {
 
   render() {
 
-    const {filter}=this.props;
+    const {filter, onFilterChange}=this.props;
 
     const buttons = this.buttons.map(({name, label}) => {
       const isActive = filter === name;
 
       const classNames = isActive ? `btn-outline-primary` : `btn-outline-secondary`;
 
-      return <button className={`btn ${classNames}`} type="button" key={name}>{label}</button>
+      return (
+        <button className={`btn ${classNames}`}
+              type="button"
+              key={name}
+              onClick={() => onFilterChange(name)}>
+          {label}
+        </button>)
     });
 
     return (
