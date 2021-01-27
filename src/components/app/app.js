@@ -70,7 +70,7 @@ export default class App extends Component {
     })
   }
 
-  onSearchChange =(searchLabel) => console.log(searchLabel);
+  onSearchChange =(searchLabel) =>  this.setState({searchLabel});
 
   deleteTask =(key) => {
     this.setState(({todoListDefault})=> {
