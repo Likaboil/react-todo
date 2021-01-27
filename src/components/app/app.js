@@ -10,7 +10,7 @@ import AddTaskForm from '../add-task-form';
 
 export default class App extends Component {
 
-  newKey=100;
+  newKey = 100;
 
   state = {
     todoListDefault: [
@@ -23,6 +23,7 @@ export default class App extends Component {
   }
 
   createTodoListItem(label) {
+
     return {
       label,
       important: false,
@@ -31,12 +32,10 @@ export default class App extends Component {
     };
   }
 
-  findIdx(arr, key) {
-    return arr.findIndex((item)=>item.key===key);
-  }
+  findIdx = (arr, key) => arr.findIndex((item) => item.key === key);
 
+  toggleProperty = (arr, propertyName, key) => {
 
-  toggleProperty =(arr, propertyName, key) => {
     const idx = this.findIdx(arr,key);
 
     const oldTask = arr[idx];
@@ -52,33 +51,35 @@ export default class App extends Component {
     ];
   }
 
-  onToggleImportant =(key) => {
-    this.setState(({todoListDefault})=> {
+  onToggleImportant = (key) => {
+
+    this.setState(({ todoListDefault }) => {
 
       return {
         todoListDefault: this.toggleProperty(todoListDefault, `important`, key)
       };
-    })
+    });
   }
 
-  onToggleDone =(key) => {
+  onToggleDone = (key) => {
 
-    this.setState(({todoListDefault})=> {
+    this.setState(({ todoListDefault }) => {
 
       return {
         todoListDefault: this.toggleProperty(todoListDefault, `done`, key)
       };
-    })
+    });
   }
 
-  onSearchChange =(searchLabel) =>  this.setState({searchLabel});
+  onSearchChange = (searchLabel) =>  this.setState({ searchLabel });
 
-  onFilterChange =(filter) => this.setState({filter});
+  onFilterChange = (filter) => this.setState({ filter });
 
-  deleteTask =(key) => {
-    this.setState(({todoListDefault})=> {
-      const idx=this.findIdx(todoListDefault,key);
+  deleteTask = (key) => {
 
+    this.setState(({ todoListDefault }) => {
+
+      const idx  = this.findIdx(todoListDefault,key);
       const newTodoList = [
         ...todoListDefault.slice(0,idx),
         ...todoListDefault.slice(idx+1)
@@ -87,13 +88,14 @@ export default class App extends Component {
       return {
         todoListDefault: newTodoList
       };
-    })
+    });
   }
 
-  addTask =(text) => {
+  addTask = (text) => {
+
     const newTask = this.createTodoListItem(text);
 
-    this.setState(({todoListDefault})=> {
+    this.setState(({ todoListDefault }) => {
 
       const newTodoList = [
         ...todoListDefault, newTask
@@ -102,58 +104,59 @@ export default class App extends Component {
       return {
         todoListDefault: newTodoList,
       };
-    })
+    });
   }
 
-  searchTask =(items, searchLabel ) => {
+  searchTask = (items, searchLabel ) => {
 
     if (searchLabel.length === 0) {
       return items;
-    }
+    };
 
-    return items.filter((item) => item.label.toLowerCase()
-                                            .indexOf(searchLabel.toLowerCase()) > -1);
+    return items.filter((item) => {
+      return item.label.toLowerCase().indexOf(searchLabel.toLowerCase()) > -1;
+    });
   }
 
-  filterTask =(items, filter) => {
+  filterTask = (items, filter) => {
     switch(filter){
       case `all`:
         return items;
       case `active`:
-        return items.filter((item)=> !item.done);
+        return items.filter((item) => !item.done);
       case `done`:
-        return items.filter((item)=> item.done);
+        return items.filter((item) => item.done);
       default:
        return items;
-    }
+    };
   }
 
   render() {
-    const {todoListDefault, searchLabel, filter} = this.state;
+    const { todoListDefault, searchLabel, filter } = this.state;
 
-    const doneCount = todoListDefault.filter((item)=> item.done).length;
+    const doneCount = todoListDefault.filter((item) => item.done).length;
     const activeCount = todoListDefault.length - doneCount;
 
     const visibleTodoList = this.searchTask(this.filterTask(todoListDefault, filter), searchLabel);
 
     return (
-      <div className="todo-app">
+      <div className = "todo-app">
         <AppHeader
-          active={activeCount}
-          done={doneCount}
+          active = { activeCount }
+          done = { doneCount }
         />
-        <div className="search-panel d-flex">
+        <div className = "search-panel d-flex">
           <SearchPanel
-            onSearchChange={this.onSearchChange} />
-          <Filters filter={filter}
-            onFilterChange={this.onFilterChange} />
+            onSearchChange = { this.onSearchChange } />
+          <Filters filter = {filter}
+            onFilterChange = { this.onFilterChange } />
         </div>
-        <TodoList todoListProps = {visibleTodoList}
-          onDeleted={this.deleteTask}
-          onToggleImportant={this.onToggleImportant}
-          onToggleDone={this.onToggleDone} />
+        <TodoList todoListProps = { visibleTodoList }
+          onDeleted = { this.deleteTask }
+          onToggleImportant = { this.onToggleImportant }
+          onToggleDone = { this.onToggleDone } />
         <AddTaskForm
-          onTaskAdded={this.addTask} />
+          onTaskAdded = { this.addTask } />
       </div>
     );
   }
