@@ -16,7 +16,9 @@ export default class Filters extends Component {
     const buttons = this.buttons.map(({name, label}) => {
       const isActive = filter === name;
 
-      return <button className="btn btn-outline-primary" type="button" key={name}>{label}</button>
+      const classNames = isActive ? `btn-outline-primary` : `btn-outline-secondary`;
+
+      return <button className={`btn ${classNames}`} type="button" key={name}>{label}</button>
     });
 
     return (
