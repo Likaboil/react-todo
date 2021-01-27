@@ -8,8 +8,11 @@ export default class SearchPanel extends Component {
   }
 
   onLabelChange = (evt) => {
-    evt.preventDefault();
-    console.log(evt.target.value);
+
+    const label = evt.target.value
+
+    this.setState({label});
+    this.props.onSearchChange(label);
   }
 
   render() {
