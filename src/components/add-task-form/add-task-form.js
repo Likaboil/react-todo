@@ -13,17 +13,24 @@ export default class AddTaskForm extends Component {
     });
   }
 
+  onSubmit=(evt)=> {
+    evt.preventDefault();
+    this.props.onTaskAdded(this.state.label);
+  }
+
   render() {
 
     return (
-      <form className="add-panel d-flex">
+      <form className="add-panel d-flex"
+            onSubmit={this.onSubmit} >
+
         <input className="form-control new-task-label"
                 type="text"
                 placeholder="What needs to be done?"
-                onChange={this.onLabelChange} />
-        <button className="btn btn-outline-success"
-                type="button"
-                onClick={()=> this.props.onTaskAdded(`task for adding to list`)}>
+                onChange={this.onLabelChange}
+                value={this.state.label}
+                />
+        <button className="btn btn-outline-success">
                 Add
         </button>
       </form>
